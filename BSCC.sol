@@ -1,8 +1,12 @@
 /**
+ *Submitted for verification at BscScan.com on 2021-05-17
+*/
+
+/**
 
    #BSCCash
    7% fee auto distribute to all the holders
-   5% fee auto moved to the company wallet (0xBfd06AeA1D32350351d0fc00A162Df2BD32d187D)
+   5% fee auto moved to the company wallet (0x8548DaBaddD640Bcd50Ccf66b2E30BFD6B8e7780)
  
  */
 
@@ -206,7 +210,7 @@ abstract contract Ownable is Context {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     constructor () {
-        _owner = 0x8548DaBaddD640Bcd50Ccf66b2E30BFD6B8e7780;
+        _owner = 0xBfd06AeA1D32350351d0fc00A162Df2BD32d187D;
         emit OwnershipTransferred(address(0), _owner);
     }
 
@@ -434,7 +438,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-contract Shinjiinu is Context, IERC20, Ownable {
+contract BSCCash is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -447,7 +451,7 @@ contract Shinjiinu is Context, IERC20, Ownable {
     mapping (address => bool) private _isExcluded;
     address[] private _excluded;
 
-    address private _companyWalletAddress = 0xBfd06AeA1D32350351d0fc00A162Df2BD32d187D;
+    address private _companyWalletAddress = 0x8548DaBaddD640Bcd50Ccf66b2E30BFD6B8e7780;
    
     uint256 private constant MAX = ~uint256(0);
     uint256 private _tTotal = 1000000000000000  * 10**9;
@@ -474,7 +478,7 @@ contract Shinjiinu is Context, IERC20, Ownable {
     bool public swapAndLiquifyEnabled = true;
     
     uint256 public _maxTxAmount = 1000000000000000 * 10**6 * 10**9;
-    uint256 private numTokensSellToAddToLiquidity = 1000000000000000 * 10**6 * 10**9;
+    uint256 private numTokensSellToAddToLiquidity = 1000000000000 * 10**6 * 10**9;
     
     event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
     event SwapAndLiquifyEnabledUpdated(bool enabled);
@@ -901,4 +905,3 @@ contract Shinjiinu is Context, IERC20, Ownable {
     }
 
 }
-
